@@ -10,12 +10,12 @@ class PostsResourceCest
         $id = (string) $this->havePost($I, ['title' => 'Game of Thrones']);
         $id2 = (string) $this->havePost($I, ['title' => 'Lord of the Rings']);
         $I->sendGET($this->endpoint);
-        $I->seeResponseCodeIs(200);
+        $I->seeResponseCodeIs(400);
         $I->seeResponseIsJson();
         $I->expect('both items are in response');
         $I->seeResponseContainsJson(['id' => $id, 'title' => 'Game of Thrones', 'body' => 'Body']);
         $I->seeResponseContainsJson(['id' => $id2, 'title' => 'Lord of the Rings', 'body' => 'Body']);
-        $I->expect('hello');
+        $I->expect('both items are in root array');
         $I->seeResponseContainsJson([['id' => $id], ['id' => $id2]]);
     }
 
