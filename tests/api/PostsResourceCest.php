@@ -10,7 +10,7 @@ class PostsResourceCest
         $id = (string) $this->havePost($I, ['title' => 'Game of Thrones']);
         $id2 = (string) $this->havePost($I, ['title' => 'Lord of the Rings']);
         $I->sendGET($this->endpoint);
-        $I->seeResponseCodeIs(400);
+        $I->seeResponseCodeIs(200);
         $I->seeResponseIsJson();
         $I->expect('both items are in response');
         $I->seeResponseContainsJson(['id' => $id, 'title' => 'Game of Thrones', 'body' => 'Body']);
