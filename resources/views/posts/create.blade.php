@@ -8,7 +8,7 @@
     {{ csrf_field() }}
     <ul>
         <li>
-            <label for="title">testTitle:</label>
+            <label for="title">testTitle!</label>
             <input type="text" id="title" name="title" value="{{ old('title') }}">
         </li>
 
