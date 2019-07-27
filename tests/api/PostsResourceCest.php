@@ -15,7 +15,7 @@ class PostsResourceCest
         $I->expect('both items are in response');
         $I->seeResponseContainsJson(['id' => $id, 'title' => 'Game of Thrones', 'body' => 'Body']);
         $I->seeResponseContainsJson(['id' => $id2, 'title' => 'Lord of the Rings', 'body' => 'Body']);
-        $I->expect('both items are in root array');
+        $I->expect('hello');
         $I->seeResponseContainsJson([['id' => $id], ['id' => $id2]]);
     }
 
